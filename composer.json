@@ -3,20 +3,18 @@
   "description": "Yukky Log SDK for PHP",
   "homepage": "https://log.yukkyapp.com",
   "license": "MIT",
-  "authors": [
-    {
-      "name": "Yukky staff",
-      "email": "support@yukkyapp.com",
-      "role": "Developer",
-      "homepage": "https://yukkyapp.com"
-    }
-  ],
+  "authors": [{
+    "name": "Yukky staff",
+    "email": "support@yukkyapp.com",
+    "role": "Developer",
+    "homepage": "https://yukkyapp.com"
+  }],
   "require": {
     "ext-curl": "*"
   },
   "autoload": {
     "psr-0": {
-      "Yukky": "yukky/log/"
+      "Yukky": "lib/"
     }
   }
 }

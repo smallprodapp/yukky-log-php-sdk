@@ -1,6 +1,6 @@
 <?php 
 
-namespace yukky\log;
+namespace Yukky;
 
 class LogFull extends Log {
     public $type;
