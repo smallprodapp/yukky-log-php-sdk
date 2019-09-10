@@ -6,7 +6,9 @@ For more informations visit https://log.yukkyapp.com/doc
 
 ## Installation
 
-// TODO this
+```
+composer require smallprodapp/yukky-log-php-sdk
+```
 
 **That's it !**
 
