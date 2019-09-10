@@ -16,7 +16,7 @@ class YukkyLog
 
     private static function request ($data) {
         $ch = \curl_init();
-        $req = ['event' => $data, 'appkey' => YukkyLog::$appkey, 'appsecret' => YukkyLog::$appsecret];
+        $req = ['log' => $data, 'appkey' => YukkyLog::$appkey, 'appsecret' => YukkyLog::$appsecret];
         $params = json_encode($req);
         \curl_setopt($ch, CURLOPT_POSTFIELDS, $params);
         \curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");

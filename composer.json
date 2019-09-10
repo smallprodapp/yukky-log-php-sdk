@@ -16,7 +16,7 @@
   },
   "autoload": {
     "psr-0": {
-      "YukkyLog": "yukky/log/"
+      "Yukky": "yukky/log/"
     }
   }
 }
