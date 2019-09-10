@@ -17,9 +17,9 @@ composer require smallprodapp/yukky-log-php-sdk
 Somewhere in your code you should add this :
 
 ```
-// TODO this
+require "./vendor/autoload.php";
 ...
-YukkyLog.init("<appkey>", "<appsecret>");
+Yukky\YukkyLog.init("<appkey>", "<appsecret>");
 ```
 
 This will initialize the SDK.
@@ -35,7 +35,7 @@ To send a Log, you need to create it first.
 To do that, you can create a Log object like this :
 
 ```
-new Log("PHP Test", ["PHP", "Test"], "Test php desc", null);
+new Yukky\Log("PHP Test", ["PHP", "Test"], "Test php desc", null);
 ```
 
 The first parameter is the log name, the second is an array of tags, the third is a description and the last one is some infos you want to send, it must be an object.
@@ -43,7 +43,7 @@ The first parameter is the log name, the second is an array of tags, the third i
 If you want to create your own log type (not error, warning or info), you can create a FullLog object like this :
 
 ```
-new FullLog("PHP Test", ["PHP", "Test"], "Test php desc", null, "my type");
+new Yukky\FullLog("PHP Test", ["PHP", "Test"], "Test php desc", null, "my type");
 ```
 
 The parameters are the same as Log but you must add another one which is the name of your custom type.
@@ -53,9 +53,9 @@ The parameters are the same as Log but you must add another one which is the nam
 To send an error log simply add this line :
 
 ```
-YukkyLog.error(new Log("PHP Test", ["PHP", "Test"], "Test php desc", null));
+Yukky\YukkyLog.error(new Log("PHP Test", ["PHP", "Test"], "Test php desc", null));
 or
-YukkyLog.error(["name" => "PHP Test", "tags" => ["PHP", "Test"], "desc" => "Test php desc", "infos" => null]);
+Yukky\YukkyLog.error(["name" => "PHP Test", "tags" => ["PHP", "Test"], "desc" => "Test php desc", "infos" => null]);
 ```
 
 ### Warning
@@ -63,9 +63,9 @@ YukkyLog.error(["name" => "PHP Test", "tags" => ["PHP", "Test"], "desc" => "Test
 To send a warning log simply add this line :
 
 ```
-YukkyLog.warning(new Log("PHP Test", ["PHP", "Test"], "Test php desc", null));
+Yukky\YukkyLog.warning(new Log("PHP Test", ["PHP", "Test"], "Test php desc", null));
 or
-YukkyLog.warning(["name" => "PHP Test", "tags" => ["PHP", "Test"], "desc" => "Test php desc", "infos" => null]);
+Yukky\YukkyLog.warning(["name" => "PHP Test", "tags" => ["PHP", "Test"], "desc" => "Test php desc", "infos" => null]);
 ```
 
 ### Info
@@ -73,9 +73,9 @@ YukkyLog.warning(["name" => "PHP Test", "tags" => ["PHP", "Test"], "desc" => "Te
 To send an info log simply add this line :
 
 ```
-YukkyLog.info(new Log("PHP Test", ["PHP", "Test"], "Test php desc", null));
+Yukky\YukkyLog.info(new Log("PHP Test", ["PHP", "Test"], "Test php desc", null));
 or
-YukkyLog.info(["name" => "PHP Test", "tags" => ["PHP", "Test"], "desc" => "Test php desc", "infos" => null]);
+Yukky\YukkyLog.info(["name" => "PHP Test", "tags" => ["PHP", "Test"], "desc" => "Test php desc", "infos" => null]);
 ```
 
 ### Custom
@@ -83,7 +83,7 @@ YukkyLog.info(["name" => "PHP Test", "tags" => ["PHP", "Test"], "desc" => "Test 
 To send a custom log simply add this line :
 
 ```
-YukkyLog.custom(new FullLog("PHP Test", ["PHP", "Test"], "Test php desc", null, "my type"));
+Yukky\YukkyLog.custom(new FullLog("PHP Test", ["PHP", "Test"], "Test php desc", null, "my type"));
 or
-YukkyLog.custom(["name" => "PHP Test", "tags" => ["PHP", "Test"], "desc" => "Test php desc", "infos" => null, "type" => "my custom type"]);
+Yukky\YukkyLog.custom(["name" => "PHP Test", "tags" => ["PHP", "Test"], "desc" => "Test php desc", "infos" => null, "type" => "my custom type"]);
 ```

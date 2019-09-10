@@ -18,6 +18,7 @@ class YukkyLog
         $ch = \curl_init();
         $req = ['log' => $data, 'appkey' => YukkyLog::$appkey, 'appsecret' => YukkyLog::$appsecret];
         $params = json_encode($req);
+        \curl_setopt($ch, CURLOPT_URL, "https://api.yukkyapp.com/log");
         \curl_setopt($ch, CURLOPT_POSTFIELDS, $params);
         \curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
         \curl_setopt($ch, CURLOPT_POST, 1);
